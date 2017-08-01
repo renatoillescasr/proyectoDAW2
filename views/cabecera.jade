@@ -1,0 +1,18 @@
+extends layout
+
+block cabecera
+  // Cabecera y menus navegacion
+  header.container
+    section.container.row
+      figure.col-xs-12.col-sm-2.col-md-2
+        a(href="index")
+          img.logo.img-responsive(src="img/logo2.jpg" alt="logoweb")
+      nav.navbar.menuSesion.col-xs-12.col-sm-10.col-md-10
+        .container-fluid.nav.navbar-nav.navbar-right
+          a#registro(href="registro")
+            span.glyphicon.glyphicon-list-alt  Registrate
+          a#iniciosesion(href="iniciosesion")
+            span.glyphicon.glyphicon-user  Iniciar Sesion
+          a#carrito(href="micarrito")
+            span.glyphicon.glyphicon-shopping-cart  Mi Carrito
+    block menuNavegacion

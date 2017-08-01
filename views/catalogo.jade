@@ -1,0 +1,23 @@
+extends navYpie
+
+block catalogo
+  // seccion de cambio para contenido de la pagina
+  section#variante.container
+    #cuerpo.row
+      nav.col-md-2.col-lg-2
+        ul.menuColeccion.nav.nav-list
+          li
+            label.tree-toggle.nav-header.marcas VESTIDOS
+            ul#despliegeMarcas.nav.nav-list.tree
+              li
+                a(href="")
+                  span.activo GraceKarin
+              li
+                a(href="") Kate
+      section.contenidoColeccion.col-md-10.col-lg-10
+        #galeriaColeccion.row
+          #compras.row
+            #marca1
+              // lee desde el json
+            #marca2
+              // lee desde el json

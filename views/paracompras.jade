@@ -1,0 +1,20 @@
+extends navYpie
+
+block paracompras
+  //seccion de cambio para contenido de la pagina
+  section#variante.container
+    #cuerpo.row
+      nav.hidden-xs.hidden-sm.col-md-2.col-lg-2
+        ul.menuColeccion.nav.nav-list
+          li
+            label.tree-toggle.nav-header.marcas VESTIDOS
+            ul#despliegeMarcas.nav.nav-list.tree
+              li
+                a(href="catalogo")
+                  span.activo GraceKarin
+              li
+                a(href="catalogo") Kate
+      
+      section.contenidoColeccion.col-md-10.col-lg-10
+        #compras.row
+          //Escritura desde la url
