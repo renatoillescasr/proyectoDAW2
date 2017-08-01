@@ -1,55 +1,6 @@
-doctype html
-html(lang="es")
-head
-  title Contacto
-  meta(charset="utf-8")
-  meta(name='viewport',content='width=device-width, initial-scale=1')
-  meta(name="autor",content="Julio Realpe,Renato Illescas,Brenda Bermello,Lenin Tenecela")
-  meta(name="description",content="Sitio web de venta de vestidos por catalogo para mujeres")
-  meta(name="keywords",content="vestidos, mujeres, prendas, gala")
-  // BOOTSTRAP
-  link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
-  // FONTS AWESONE
-  link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
-  // GOOGLE FONTS
-  link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Josefin+Slab")
-  // BOOTSTRAP SOCIAL NETWORKS
-  link(rel="stylesheet", href="css/bootstrap-social.css")
-  // ESTILO DE LA PAGINA
-  link(rel="stylesheet", href="css/estilo.css")
-body
-  // Cabecera y menus navegacion
-  header.container
-    section.container.row
-      figure.col-xs-12.col-sm-2.col-md-2
-        a(href="index")
-          img.logo.img-responsive(src="img/logo2.jpg" alt="logoweb")
-      nav.navbar.menuSesion.col-xs-12.col-sm-10.col-md-10
-        .container-fluid.nav.navbar-nav.navbar-right
-          a#registro(href="registro")
-            span.glyphicon.glyphicon-list-alt  Registrate
-          a#iniciosesion(href="iniciosesion")
-            span.glyphicon.glyphicon-user  Iniciar Sesion
-          a#carrito(href="micarrito")
-            span.glyphicon.glyphicon-shopping-cart  Mi Carrito
-    // Menu de navegacion por la pagina
-    nav.navbar.navbar-inverse.menuClientes.row
-      .container-fluid
-        .navbar-header
-          button.navbar-toggle(type="button" data-toggle="collapse" data-target="#myNavbar")
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-        .collapse.navbar-collapse#myNavbar
-          ul.nav.navbar-nav.menuNavegacion
-            li
-              a(href="index") Inicio
-            li
-              a(href="catalogo") Catalogo
-            li
-              a(href="tiendas") Tiendas
-            li
-              a(href="contacto") Contacto
+extends navYpie
+
+block contacto
   // seccion de cambio para contenido de la pagina
   section#variante.container
     #cuerpo.row
@@ -61,7 +12,7 @@ body
           .col-sm-offset-1.col-sm-2.control-label(for="nombre") Nombre:
           .col-sm-4
             input.form-control(type="nombre" id="nombre" autocomplete="nombre" placeholder="su nombre" required="required")
-              
+        
         .form-group
           .col-sm-offset-1.col-sm-2.control-label(for="item") Seleccione:
           .col-sm-4
@@ -70,48 +21,12 @@ body
               option(value="quejas") Queja
               option(value="reclamo") Reclamo
               option(value="sugerencia") sugerencias
-               
+          
         .form-group
           label.col-sm-offset-1.col-sm-2.control-label(for="comentario") Su comentario:
           .col-sm-4
             textarea#comentario.form-control(rows="5")
-        
+              
         .form-group
           .col-sm-offset-5.col-sm-7
             button.btn.btn-danger.btn-lg(type="submit", formaction="index.html") Enviar
-            
-  // seccion informacion y Redes Sociales
-  section.container.informacion
-    .row
-      section.mails.col-xs-12.col-sm-6.col-md-6
-        form
-          span.glyphicon.glyphicon-envelope NOTICIAS: 
-            input(type="email" name="email" required="required")
-          input(type="submit")
-      section.redesSociales.col-xs-12.col-sm-6.col-md-6
-        h2 Redes Sociales
-        ul
-          li.btn.btn-social-icon.btn-facebook
-            span.fa.fa-facebook
-          li.btn.btn-social-icon.btn-instagram
-            span.fa.fa-instagram
-          li.btn.btn-social-icon.btn-twitter
-            span.fa.fa-twitter
-          li.btn.btn-social-icon.btn-pinterest
-            span.fa.fa-pinterest
-  // Pie de pagina
-  footer.container
-    nav.menuEmpresa
-      a(href="#") La Empresa -
-      a(href="#")  Mision -
-      a(href="#")  Vision
-      a#administracion(href="graficoD3")
-        span.glyphicon.glyphicon-eye-open Administracion
-    h4#derechos
-      span.glyphicon.glyphicon-copyright-mark Derechos Reservados
-  // JQUERY
-  script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
-  // BOOTSTRAP
-  script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
-  // Mi JQuery
-  script(src="js/graficoD3.js")

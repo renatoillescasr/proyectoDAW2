@@ -8,15 +8,31 @@ app.set("view engine","jade");
 app.use(express.static("public"));
 
 app.get("/",function(req,res){
-  res.render("varianteInicio");
+  res.render("inicio");
 });
 
 app.get("/index",function(req,res){
-  res.render("varianteInicio");
+  res.render("inicio");
 });
 
 app.get("/catalogo",function(req,res){
   res.render("catalogo");
+});
+
+app.get("/contacto",function(req,res){
+  res.render("contacto");
+});
+
+app.get("/micarrito",function(req,res){
+  res.render("micarrito");
+});
+
+app.get("/iniciosesion",function(req,res){
+  res.render("iniciosesion");
+});
+
+app.get("/registro",function(req,res){
+  res.render("registro");
 });
 
 app.get("/compras",function(req,res){

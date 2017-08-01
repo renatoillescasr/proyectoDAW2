@@ -1,7 +1,7 @@
 doctype html
 html(lang="es")
 head
-  title Proyecto
+  title Catalogo
   meta(charset="utf-8")
   meta(name='viewport',content='width=device-width, initial-scale=1')
   meta(name="autor",content="Julio Realpe,Renato Illescas,Brenda Bermello,Lenin Tenecela")
@@ -32,7 +32,7 @@ body
             span.glyphicon.glyphicon-user  Iniciar Sesion
           a#carrito(href="micarrito")
             span.glyphicon.glyphicon-shopping-cart  Mi Carrito
-    // Menu de navegacion por la pagina
+    // Menu de navegacion por la pagina 
     nav.navbar.navbar-inverse.menuClientes.row
       .container-fluid
         .navbar-header
@@ -44,41 +44,38 @@ body
           ul.nav.navbar-nav.menuNavegacion
             li
               a(href="index") Inicio
-            li.active
+            li
               a(href="catalogo") Catalogo
             li
               a(href="tiendas") Tiendas
             li
               a(href="contacto") Contacto
+  // seccion de cambio para contenido de la pagina
+  #variante.container
+    #cuerpo.row
+    // FORMULARIO
+    .container.row
+      h3 INICIO DE SESION
+      form.form-horizontal(action="#", name="iniciosesion", method="get", autocomplete="on")
+        .form-group
+          label.col-sm-offset-1.col-sm-2.control-label(for="email") Correo:
+          .col-sm-4
+            input.form-control(type="email", id="email", autocomplete="email", placeholder="correo@electronico.com", required="required")
+              
+        .form-group
+          label.col-sm-offset-1.col-sm-2.control-label(for="clave") Clave:
+          .col-sm-4
+            input.form-control#clave(type="password", required="required")
 
-  section#variante.container
-    section#myCarousel.carousel.slide.imagenprincipal(data-ride="carousel")
-      // Indicators
-      ol.carousel-indicators
-        li.active(data-target="#myCarousel" data-slide-to="0")
-        li(data-target="#myCarousel" data-slide-to="1")
-        li(data-target="#myCarousel" data-slide-to="2")
-      // Wrapper for slides
-      .carousel-inner
-        .item.active
-          img.img-responsive(src="img/vestido1.jpg" alt="Los Angeles")
-        .item
-          img.img-responsive(src="img/vestido2.jpg" alt="Chicago")
-        .item
-          img.img-responsive(src="img/vestido3.jpg" alt="New York")
-      // Left and right controls
-      a.left.carousel-control(href="#myCarousel" data-slide="prev")
-        span.glyphicon.glyphicon-chevron-left
-        span.sr-only Previous
-      a.right.carousel-control(href="#myCarousel" data-slide="next")
-        span.glyphicon.glyphicon-chevron-right
-        span.sr-only Next
+        .form-group
+          .col-sm-offset-5.col-sm-7
+            button.btn.btn-danger(type="submit",  formaction="index.html") Enviar
   // seccion informacion y Redes Sociales
   section.container.informacion
     .row
       section.mails.col-xs-12.col-sm-6.col-md-6
         form
-          span.glyphicon.glyphicon-envelope NOTICIAS:
+          span.glyphicon.glyphicon-envelope NOTICIAS: 
             input(type="email" name="email" required="required")
           input(type="submit")
       section.redesSociales.col-xs-12.col-sm-6.col-md-6
@@ -106,5 +103,5 @@ body
   script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
   // BOOTSTRAP
   script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
-  // Mi JQuery
-  script(src="js/catalogo.js")
+
+	
