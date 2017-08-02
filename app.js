@@ -13,9 +13,9 @@ db.once('open',function(){
 
 // view engine setup
 app.set("view engine","jade");
-
-app.use(express.static("public"));
 app.set('views', path.join(__dirname, 'views'));
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 //Routes
 app.use('/', require('./routes/index.js'));

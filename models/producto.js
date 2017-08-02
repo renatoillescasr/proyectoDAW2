@@ -9,7 +9,7 @@ var producto = new Schema({
   price_excl_tox:Number,
   tallas:{
     type:String,
-    items:['S','M','L','XL']
+    enum:['S','M','L','XL']
   },
   stock:Number,
   desc:Number,

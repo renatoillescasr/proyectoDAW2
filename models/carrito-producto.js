@@ -3,10 +3,7 @@ var mongoose = require("mongoose"),
 
 var carrito-producto = new Schema({
   cantidad:Number,
-  fechaCreacion:{
-    type:Date,
-    default:Date.now
-  },
+  fechaCreacion:{ type:Date,default:Date.now },
   carrito:{
     type:Schema.ObjectId,
     ref:"carrito"
