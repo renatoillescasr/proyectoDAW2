@@ -2,32 +2,33 @@ var mongoose=require('mongoose');
     Schema = mongoose.Schema;
 
 var  UsuarioSchema = new Schema({
-  fechaIngreso :{
+  fecha_ingreso :{
     type:Date,
     default:Date.now
   },
-  cedula:String,
-  nombres:String,
-  apellidos:String,
+  cedula:{ type:String, required:true },
+  nombres:{ type:String, required:true },
+  apellidos:{ type:String, required:true },
   sexo:{
     type:String,
-    items:['Femenino','Masculino']
+    enum:['Femenino','Masculino']
   },
   telefono_domicilio:Number,
   telefono_celular:Number,
-  direccion:String,
-  fecha_Nacimiento:Date,
-  rol:String,// si es Adminitrador, veedor, cliente
-  correo :String,
+  direccion:{ type:String, required:true },
+  fecha_nacimiento:Date,
+  rol:{
+    type:String,
+    enum:['Cliente','Administrador','Moderador'],
+    default:'Cliente'
+  },
+  correo:{ type:String, required:true },
   password : String,
+  /*
   carrito:[{
     type:Schema.ObjectId,
     ref:"carrito"
-  }]
-},
-{
-  versionKey: false,
-  collection: 'usuario'
+  }]*/
 });
 
 module.exports = mongoose.model("Usuario",UsuarioSchema);

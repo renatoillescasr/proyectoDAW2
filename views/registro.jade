@@ -5,72 +5,72 @@ block registro
   section#variante.container
     #cuerpo.row
       h3 INFORMACION PERSONAL
-      form.form-horizontal(action="#", id="datosregistro", name="datosregistro", method="get", autocomplete="on")
+      form.form-horizontal(method="POST", action="", id="datosregistro", name="datosregistro")
         
         .form-group
           label.col-sm-offset-1.col-sm-2.control-label(for="cedula") CI:
           .col-sm-4
-            input.form-control(type="text", id="cedula", autocomplete="on", placeholder="cedula", required="required")
+            input.form-control(type="text" id="cedula" name="cedula" autocomplete="on" placeholder="cedula" required="required")
 
         .form-group
           label.col-sm-offset-1.col-sm-2.control-label(for="cedula") Nombres:
           .col-sm-4
-            input.form-control(type="text", id="nombres", autocomplete="on", placeholder="Nombres completos")
+            input.form-control(type="text" id="nombres" name="nombres" autocomplete="on" placeholder="Nombres completos")
   
         .form-group
           label.col-sm-offset-1.col-sm-2.control-label(for="apellidos") Apellidos: 
           .col-sm-4
-            input.form-control(type="text", id="apellidos", autocomplete="on", placeholder="Apellidos completos")
+            input.form-control(type="text" id="apellidos" name="apellidos" autocomplete="on" placeholder="Apellidos completos")
           
         .form-group
           label.col-sm-offset-1.col-sm-2.control-label(for="sexo") Sexo:
           .col-sm-4
-            input.form-control(type="text", id="sexos", name="sexos", list="sexo", placeholder="Sexo")
+            input.form-control(type="text", id="sexos" name="sexo" list="sexo" placeholder="Sexo")
             datalist#sexo
-              option(value="femenino") Femenino
-              option(value="masculino") Masculino
+              option(value="Femenino") Femenino
+              option(value="Masculino") Masculino
         
         .form-group
           label.col-sm-offset-1.col-sm-2.control-label(for="telefono") Telefono domicilio:
           .col-sm-4
-            input.form-contro(type="text", id="telefono", autocomplete="on", placeholder="(00)222-2222")
+            input.form-contro(type="text" id="telefono" name="telefono_domicilio" autocomplete="on" placeholder="(00)222-2222")
 
         .form-group
           label.col-sm-offset-1.col-sm-2.control-label(for="movil") Telefono celular:
           .col-sm-4
-            input.form-control(type="text", id="movil", autocomplete="on", placeholder="(09)99999999")
+            input.form-control(type="text" id="movil" name="telefono_celular" autocomplete="on", placeholder="(09)99999999")
           
         .form-group
           label.col-sm-offset-1.col-sm-2.control-label(for="direccion") Direccion domiciliaria:
           .col-sm-4
-            input.form-control(type="text", id="direccion", autocomplete="on", placeholder="direccion mz. v.")
+            input.form-control(type="text" id="direccion" name="direccion" autocomplete="on" placeholder="direccion mz. v.")
           
         .form-group
           label.col-sm-offset-1.col-sm-2.control-label(for="fecha") Fecha de Nacimiento:
           .col-sm-4
-            input.form-control(type="date" id="fecha" autocomplete="on")
+            input.form-control(type="date" id="fecha" name="fecha_nacimiento" autocomplete="on")
         
         h3 PARA INICIO DE SESION
         .form-group
           label.col-sm-offset-1.col-sm-2.control-label(for="email") Correo:
           .col-sm-4
-            input.form-control(type="email", id="email", autocomplete="email", placeholder="correo@electronico.com", required="required")
+            input.form-control(type="email" id="email" autocomplete="email" name="correo" placeholder="correo@electronico.com", required="required")
           
         .form-group
           label.col-sm-offset-1.col-sm-2.control-label(for="confirmaremail") Confirmar correo:
           .col-sm-4
-            input.form-control(type="email", id="confirmaremail", autocomplete="confirme su email", placeholder="correo@electronico.com", required="required")
+            input.form-control(type="email" id="confirmaremail" name="confirmar_correo" autocomplete="confirme su email" placeholder="correo@electronico.com", required="required")
 
         .form-group
           label.col-sm-offset-1.col-sm-2.control-label(for="clave") Clave:
           .col-sm-4
-            input.form-control(type="password", id="clave", required="required")
+            input.form-control(type="password" id="clave" name="password" required="required")
           
         .form-group
           label.col-sm-offset-1.col-sm-2.control-label(for="clave") Confirmar clave:
           .col-sm-4
-            input.form-control(type="password", id="confirmarclave", required="required")
+            input.form-control(type="password", id="confirmarclave", name="confirmar_password" required="required")
 
         .form-group
           .col-sm-offset-5.col-sm-7
-            button.btn.btn-danger.btn-lg(type="submit", formaction="index.html") Enviar        
+            button.btn.btn-danger.btn-lg(type="submit") Enviar        
