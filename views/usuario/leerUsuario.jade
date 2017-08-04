@@ -1,0 +1,16 @@
+extends layoutUsuario
+
+block parapruebas
+  ul.container
+    p= usuario.nombres +" "+ usuario.apellidos
+    p= usuario.cedula
+    p= usuario.sexo
+    p= usuario.telefono_domicilio
+    p= usuario.telefono_celular
+    p= usuario.direccion
+    p= usuario.fecha_nacimiento
+    p= usuario.correo
+    p= usuario.password
+  
+    a.btn.btn-primary(href='/usuario/editar/'+usuario._id) Editar
+    a.btn.btn-danger.delete-usuario(href="#",data-id=usuario._id) Eliminar

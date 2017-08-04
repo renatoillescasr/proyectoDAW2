@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   res.render('inicio');
 });
 
-router.get('/index', function(req,res,next){
+router.get('/inicio', function(req,res,next){
   res.render('inicio');
 });
 
@@ -29,6 +29,11 @@ router.get("/iniciosesion",function(req,res){
 router.get("/registro",function(req,res){
   res.render("registro");
 });
+
+router.get("/administracion",function(req,res){
+  res.render("administracion");
+});
+
 
 router.get("/compras",function(req,res){
   res.render("paracompras");

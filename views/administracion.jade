@@ -1,0 +1,23 @@
+extends navYpie
+
+block administracion
+  // seccion de cambio para contenido de la pagina
+  #variante.container
+    #cuerpo.row
+    // FORMULARIO
+    .container.row
+      h3 Adminitracion del sitio
+      form.form-horizontal(method="POST" action="" name="administracion")
+        .form-group
+          label.col-sm-offset-1.col-sm-2.control-label(for="email") Usuario:
+          .col-sm-4
+            input.form-control(type="text" id="usuario" name="usuario" autocomplete="on" required="required")
+        
+        .form-group
+          label.col-sm-offset-1.col-sm-2.control-label(for="clave") Clave:
+          .col-sm-4
+            input.form-control#clave(type="password" name="clave" required="required")
+        
+        .form-group
+          .col-sm-offset-5.col-sm-7
+            button.btn.btn-danger(type="submit") Enviar

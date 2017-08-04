@@ -1,0 +1,63 @@
+extends layoutUsuario
+
+block parapruebas
+  h2.container Edicion de Usuarios
+  form.form-horizontal(method="POST" action="/usuario/editar/"+usuario._id)
+    
+    .form-group
+      label.col-sm-offset-1.col-sm-2.control-label(for="cedula") CI:
+      .col-sm-4
+        input.form-control(type="text" name="cedula" value=usuario.cedula)
+
+    .form-group
+      label.col-sm-offset-1.col-sm-2.control-label(for="cedula") Nombres:
+      .col-sm-4
+        input.form-control(type="text" id="nombres" name="nombres" value=usuario.nombres)
+
+    .form-group
+      label.col-sm-offset-1.col-sm-2.control-label(for="apellidos") Apellidos: 
+      .col-sm-4
+        input.form-control(type="text" id="apellidos" name="apellidos" value=usuario.apellidos)
+      
+    .form-group
+      label.col-sm-offset-1.col-sm-2.control-label(for="sexo") Sexo:
+      .col-sm-4
+        input.form-control(type="text", id="sexos" name="sexo" list="sexo" value=usuario.sexo)
+        datalist#sexo
+          option(value="Femenino") Femenino
+          option(value="Masculino") Masculino
+    
+    .form-group
+      label.col-sm-offset-1.col-sm-2.control-label(for="telefono") Telefono domicilio:
+      .col-sm-4
+        input.form-contro(type="text" id="telefono" name="telefono_domicilio" value=usuario.telefono_domicilio)
+
+    .form-group
+      label.col-sm-offset-1.col-sm-2.control-label(for="movil") Telefono celular:
+      .col-sm-4
+        input.form-control(type="text" id="movil" name="telefono_celular" value=usuario.telefono_celular)
+      
+    .form-group
+      label.col-sm-offset-1.col-sm-2.control-label(for="direccion") Direccion domiciliaria:
+      .col-sm-4
+        input.form-control(type="text" id="direccion" name="direccion" value=usuario.direccion)
+      
+    .form-group
+      label.col-sm-offset-1.col-sm-2.control-label(for="fecha") Fecha de Nacimiento:
+      .col-sm-4
+        input.form-control(type="date" id="fecha" name="fecha_nacimiento" value=usuario.fecha_nacimiento)
+    
+    .form-group
+      label.col-sm-offset-1.col-sm-2.control-label(for="email") Correo:
+      .col-sm-4
+        input.form-control(type="email" id="email" name="correo" value=usuario.correo)
+      
+    .form-group
+      label.col-sm-offset-1.col-sm-2.control-label(for="clave") Clave:
+      .col-sm-4
+        input.form-control(type="text" id="clave" name="password" value=usuario.password)
+      
+    .form-group
+      .col-sm-offset-5.col-sm-7
+        button.btn.btn-primary(type="submit") Guardar  
+  

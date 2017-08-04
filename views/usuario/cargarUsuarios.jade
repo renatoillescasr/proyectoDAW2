@@ -1,0 +1,8 @@
+extends layoutUsuario
+
+block parapruebas
+  .container
+    ul.list-group
+      each usuario, i in usuarios
+        li.list-group-item
+          a(href="/usuario/"+usuario._id)= usuario.cedula +" "+ usuario.nombres +" "+ usuario.apellidos   

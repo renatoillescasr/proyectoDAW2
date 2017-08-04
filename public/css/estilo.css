@@ -19,10 +19,10 @@ body{
 	margin-top: 20px;
 }
 .menuSesion > div > a:visited{
-	color:red;
+	color:#337ab7;
 }
 .menuSesion > div > a:link {
-    color: red;
+    color: #337ab7;
 }
 .menuSesion div a:nth-child(1n+0)::after{
 	content: " | "

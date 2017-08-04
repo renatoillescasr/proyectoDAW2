@@ -32,17 +32,28 @@ app.use('/', require('./routes/index.js'));
 let Usuarios = require('./models/usuario.js');
 
 // lEER DATOS DE MONGODB
-app.get('/prueba',function(req,res){
+app.get('/cargarUsuarios',function(req,res){
   Usuarios.find({},function(err,usuarios){
     if(err){
       console.log("error al leer la tabla");
     }
     else{
-      res.render('parapruebas',{
+      res.render('usuario/cargarUsuarios',{
         usuarios: usuarios
       });
       console.log(usuarios.nombres);
     }
+  });
+});
+
+// CARGAR DATOS INDIVIDUALES POR LA URL _id
+app.get('/usuario/:id',function(req,res){
+  Usuarios.findById(req.params.id, function(err, usuario){
+    //console.log(usuario);
+    //return;
+    res.render('usuario/leerUsuario',{
+      usuario:usuario
+    });
   });
 });
 
@@ -59,19 +70,65 @@ app.post('/registro',function(req,res){
   usuario.fecha_nacimiento = req.body.fecha_nacimiento;
   usuario.correo = req.body.correo;
   usuario.password = req.body.password;
-  console.log(req.body.nombres);
 
   usuario.save(function(err){
     if(err){
       console.log(err);
       return;
     }else{
-      res.redirect('/index');
+      res.redirect('/inicio');
     }
   });
 });
 
-//ACTUALIZAR DATOS DE USUARIOS
+//EDITAR DATOS DE USUARIOS
+app.get('/usuario/editar/:id',function(req,res){
+  Usuarios.findById(req.params.id, function(err, usuario){
+    //console.log(usuario);
+    //return;
+    res.render('usuario/editarUsuario',{
+      usuario:usuario
+    });
+  });
+});
+
+//ACTUALIZAR DATOS A MONGODB
+app.post('/usuario/editar/:id',function(req,res){
+  let usuario = {};
+  usuario.cedula = req.body.cedula;
+  usuario.nombres = req.body.nombres;
+  usuario.apellidos = req.body.apellidos;
+  usuario.sexo = req.body.sexo;
+  usuario.telefono_domicilio = req.body.telefono_domicilio;
+  usuario.telefono_celular = req.body.telefono_celular;
+  usuario.direccion = req.body.direccion;
+  usuario.fecha_nacimiento = req.body.fecha_nacimiento;
+  usuario.correo = req.body.correo;
+  usuario.password = req.body.password;
+
+  let query = {_id:req.params.id}
+
+  Usuarios.update(query, usuario, function(err){
+    if(err){
+      console.log(err);
+      return;
+    }else{
+      res.redirect('/cargarUsuarios');
+    }
+  });
+});
+
+// ELIMINAR DATOS DE USUARIOS
+app.delete('/usuario/:id', function(req, res){
+  let query = {_id:req.params.id}
+  Usuarios.remove(query, function(err){
+      if(err){
+        console.log(err);
+        console.log("----aqui--");
+      }
+      res.send('Success');
+  });
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -80,48 +137,5 @@ app.use(function(req, res, next) {
     next(err);
 });
 
-/*
-app.get("/",function(req,res){
-  res.render("inicio");
-});
-
-app.get("/index",function(req,res){
-  res.render("inicio");
-});
-
-app.get("/catalogo",function(req,res){
-  res.render("catalogo");
-});
-
-app.get("/contacto",function(req,res){
-  res.render("contacto");
-});
-
-app.get("/micarrito",function(req,res){
-  res.render("micarrito");
-});
-
-app.get("/iniciosesion",function(req,res){
-  res.render("iniciosesion");
-});
-
-app.get("/registro",function(req,res){
-  res.render("registro");
-});
-
-app.get("/compras",function(req,res){
-  res.render("paracompras");
-  console.log(req.query.marca);
-  console.log(req.query.producto_id);
-});
-
-app.get("/tiendas",function(req,res){
-  res.render("tiendas");
-  console.log(req.query.marca);
-  console.log(req.query.producto_id);
-});
-
-app.listen(8081);
-*/
 module.exports = app;
 console.log("Servidor corriendo");

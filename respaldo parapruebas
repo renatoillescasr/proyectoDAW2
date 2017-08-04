@@ -5,5 +5,5 @@ block parapruebas
   ul
     each usuario, i in usuarios
       li= usuario.nombres
-      
+
       li= usuario.apellidos
