@@ -1,7 +1,7 @@
 var mongoose = require("mongoose"),
     Schema = mongoose.Schema;
 
-var carrito-producto = new Schema({
+var CarritoProductoSchema = new Schema({
   cantidad:Number,
   fechaCreacion:{ type:Date,default:Date.now },
   carrito:{
@@ -14,4 +14,4 @@ var carrito-producto = new Schema({
   }]
 });
 
-module.exports = mongoose.model("Carrito-Productos",Carrito-ProductoSchema);
+module.exports = mongoose.model("carrito_producto",CarritoProductoSchema);

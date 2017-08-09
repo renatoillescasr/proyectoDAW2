@@ -1,7 +1,7 @@
 var mongoose = require("mongoose"),
     Schema = mongoose.Schema;
 
-var carrito = new Schema({
+var MarcaSchema = new Schema({
   estado:{
     type:String,
     enum:['Guardado','Comprado'],
@@ -14,7 +14,7 @@ var carrito = new Schema({
     type:Schema.ObjectId,
     ref:"usuario"
   }],
-  carrito-producto:{
+  carrito_producto:{
     type:Schema.ObjectId,
     ref:"usuario"
   }
